@@ -2,6 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="design.css">
     <title>Money Tracker</title>
 </head>
@@ -11,8 +13,8 @@
         <nav class="nav"></nav>
        
     <div class="nav-bar">
-       <a href="#">About</a>
-        <a href="#"> Developer</a>
+       <a href="#About">About</a>
+        <a href="#Developer"> Developer</a>
         
     </div>
     <h1>Expenses Tracker</h1>
@@ -23,8 +25,13 @@
          </div>
         <div class ="expenses">
             <form id="expenseForm">
-    <input type="number" id="allowance" placeholder="Enter Your Allowance per week">
-    <input type="number" id="amount" placeholder="Average Amount of Expenses per day">
+                 <div class="form-group">
+                    <label for="allowance">Allowance per day/week</label>
+        <input type="text" id="allowance" >
+        <label for="recipient-name">Expenses</label>
+        <input type="text" id="expenses" >
+      </div>
+  
     <button type="submit">Add Expense</button>
      <button type="submit">Calculate Expenses</button>
      <div class = "labels">
