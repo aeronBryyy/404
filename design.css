@@ -1,4 +1,8 @@
 
+/* ==============================
+   GENERAL SETTINGS
+============================== */
+
 html {
     scroll-behavior: smooth;
 }
@@ -13,6 +17,11 @@ body {
     overflow-x: hidden;
     font-family: 'DM Sans', sans-serif;
 }
+
+
+/* ==============================
+   NAVIGATION BAR
+============================== */
 
 #header {
     position: fixed;
@@ -36,6 +45,7 @@ body {
 #navbar h1 {
     color: white;
     font-size: 1.8rem;
+    font-family: sans-serif;
 }
 
 #navbar ul {
@@ -51,51 +61,80 @@ body {
 #navbar ul li a {
     color: white;
     text-decoration: none;
+    font-family:  sans-serif;
     font-size: 1rem;
+    transition: 0.3s;
 }
 
 #navbar ul li a:hover {
     color: #e6a23c;
 }
 
+
+/* ==============================
+   GREETING SECTION
+============================== */
+
 #greet {
     position: relative;
     width: 100%;
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.55)
         ),
         url("bg.png");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* WELCOME TEXT */
 #greet-header {
     position: relative;
     z-index: 1;
     padding: 20px;
+    font-family:  sans-serif;
 }
 
 #greet-header h1 {
     color: white;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 15px;
+    font-family:  sans-serif;
 }
 
 #greet-header h2 {
     color: white;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    margin-bottom: 40px;
     text-transform: capitalize;
+    font-family: sans-serif;
+}
+
+#greet-header h3 {
+    color: white;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+#greet-header p {
+    color: white;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #greet-header a {
@@ -104,20 +143,91 @@ body {
     padding: 12px 25px;
     background: white;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 2.1rem;
     text-decoration: none;
     transition: 0.3s;
 }
 
-#menu {
+#greet-header a:hover {
     background: #e6a23c;
     color: white;
-    padding: 15px;
-    height: 15px;
-
 }
 
+
+/* ==============================
+   MENU SECTION
+============================== */
+
+#menu {
+    width: 100%;
+    padding: 50px 30px;
+    text-align: center;
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#menu h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-family: Arvo, sans-serif;
+}
+
+
+/* MENU IMAGE CONTAINER */
+
+#menu-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* INDIVIDUAL MENU ITEMS */
+
+.menu-item {
+    width: 100%;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu-item img:hover {
+    transform: scale(1.05);
+}
+
+.menu-item h3 {
+    margin-top: 12px;
+    font-family: Arvo, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
 @media (max-width: 768px) {
+
+    /* NAVIGATION */
 
     #navbar {
         padding: 0 15px;
@@ -135,6 +245,9 @@ body {
         font-size: 0.75rem;
     }
 
+
+    /* GREETING */
+
     #greet-header h1 {
         font-size: 2rem;
     }
@@ -142,4 +255,91 @@ body {
     #greet-header h2 {
         font-size: 1.3rem;
     }
+
+    #greet-header h3,
+    #greet-header p {
+        font-size: 1rem;
+    }
+
+
+    /* MENU */
+
+    #menu-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .menu-item img {
+        height: 180px;
+    }
+
+}
+
+
+/* ==============================
+   SMALL MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 480px) {
+
+    /* NAVIGATION */
+
+    #navbar {
+        padding: 0 10px;
+    }
+
+    #navbar h1 {
+        font-size: 1rem;
+    }
+
+    #navbar ul {
+        gap: 8px;
+    }
+
+    #navbar ul li a {
+        font-size: 0.65rem;
+    }
+
+
+    /* GREETING */
+
+    #greet {
+        background-attachment: scroll;
+    }
+
+    #greet-header {
+        padding: 15px;
+    }
+
+    #greet-header h1 {
+        font-size: 1.8rem;
+    }
+
+    #greet-header h2 {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+
+    #greet-header h3,
+    #greet-header p {
+        font-size: 0.9rem;
+    }
+
+
+    /* MENU */
+
+    #menu {
+        padding: 30px 15px;
+        background-attachment: scroll;
+    }
+
+    #menu-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-item img {
+        height: 220px;
+    }
+
 }
