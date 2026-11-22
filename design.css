@@ -196,7 +196,8 @@ img {
 
 #menu-row,
 .appetizers-prices,
-.maincourse-items {
+.maincourse-items,
+.desserts-items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
@@ -206,6 +207,28 @@ img {
 
 .menu-item {
     width: 100%;
+}
+
+.menu-details {
+    position: relative;
+    isolation: isolate;
+    min-height: 82px;
+    margin: 12px 4px 0;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffbd23, #f08a00);
+    clip-path: polygon(3% 4%, 98% 0, 90% 100%, 10% 93%);
+}
+
+.menu-details::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 5px;
+    background: linear-gradient(135deg, #f02d20, #c9150d);
+    clip-path: polygon(3% 4%, 98% 0, 90% 100%, 10% 93%);
 }
 
 .menu-item img {
@@ -222,14 +245,14 @@ img {
 }
 
 .menu-item h3 {
-    margin-top: 14px;
+    margin-top: 0;
     font-family: 'Archivo Black', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: 0.06em;
 }
 
-/* price text */
+
 .menu-item p {
     margin-top: 6px;
     font-family: 'DM Sans', sans-serif;
@@ -243,13 +266,15 @@ img {
 
 
 #prices-menu,
-#menu-maincourse {
+#menu-maincourse,
+#menu-desserts {
     width: 100%;
     padding: 50px 0 0;
     text-align: center;
 }
 
 #prices-menu h2,
+#menu-desserts h2,
 #menu-maincourse h2 {
     font-family: 'Archivo Black', sans-serif;
     font-size: clamp(1.3rem, 2vw, 2rem);
@@ -258,7 +283,8 @@ img {
     margin-bottom: 8px;
 }
 
-#prices-menu h2::after,
+#prices-menu h2::after,  
+#menu-desserts h2::after,
 #menu-maincourse h2::after {
     content: "";
     display: block;
@@ -274,7 +300,8 @@ img {
 
     #menu-row,
     .appetizers-prices,
-    .maincourse-items {
+    .maincourse-items,
+    .desserts-items {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px;
     }
@@ -285,9 +312,6 @@ img {
 }
 
 
-/* ==============================
-   MOBILE
-============================== */
 
 @media (max-width: 600px) {
 
@@ -307,13 +331,15 @@ img {
     }
 
     #prices-menu,
-    #menu-maincourse {
+    #menu-maincourse,
+    #menu-desserts {
         padding-top: 40px;
     }
 
     #menu-row,
     .appetizers-prices,
-    .maincourse-items {
+    .maincourse-items,
+    .desserts-items {
         grid-template-columns: 1fr;
         gap: 22px;
     }
